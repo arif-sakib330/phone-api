@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Daisy Ui -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Phone Hunter API</title>
+</head>
+
+<body>
+    <header class="flex justify-center">
+        <h1><span class="text-5xl text-white" id="sakib-name">SAKIB</span><span class="text-3xl"> Phone
+                Shop</span></h1>
+    </header>
+    <main>
+        <section class="container mx-auto mt-5 w-auto px-52">
+            <!-- search -->
+            <section class="bg-gray-100 py-2 px-4 items-center flex justify-center gap-1">
+                <input id="inputField" type="text" placeholder="Search..." class="input w-full max-w-xs" />
+                <button onclick="HandleSearch()" class="btn">Search</button>
+            </section>
+
+            <!-- load spring -->
+            <div id="loading-spinner" class="text-center my-32 hidden">
+                <span class="loading loading-spinner loading-lg"></span>
+            </div>
+
+            <!-- div -->
+            <div id="phone-container" class="gap-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                <!-- <div class="card bg-base-100 w-96 shadow-xl">
+                    <figure>
+                        <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+                            alt="Shoes" />
+                    </figure>
+                    <div class="card-body">
+                        <h2 class="card-title">Shoes!</h2>
+                        <p>If a dog chews shoes whose shoes does he choose?</p>
+                        <div class="card-actions justify-end">
+                            <button class="btn btn-primary">Buy Now</button>
+                        </div>
+                    </div> -->
+            </div>
+            </div>
+        </section>
+
+
+
+        <!-- show details -->
+        <dialog id="show_details_modal" class="w-auto h-auto modal modal-bottom sm:modal-middle">
+            <div class="modal-box">
+                <h3 id="show-phone-details-name" class="text-lg text-center font-bold"></h3>
+
+                <div id="show-details-id">
+
+                    <!-- <p><span>:</span>${}</p> -->
+                </div>
+
+                <div class="modal-action">
+                    <form method="dialog">
+                        <button class="btn bg-orange-500 text-black">Close</button>
+                    </form>
+                </div>
+            </div>
+        </dialog>
+
+
+        <!-- show all btn -->
+        <section>
+            <div id="show-button-container" class=" hidden text-center my-4">
+                <button onclick="handleShowAllBtn()" class="btn px-8 text-black  bg-red-300">Show All</button>
+            </div>
+        </section>
+    </main>
+    <footer></footer>
+
+    <script src="js/phone.js"></script>
+</body>
+
+</html>
